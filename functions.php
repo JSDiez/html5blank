@@ -159,16 +159,30 @@ function remove_category_rel_from_category_list($thelist)
 function add_slug_to_body_class($classes)
 {
     global $post;
-    if (is_home()) {
-        $key = array_search('blog', $classes);
-        if ($key > -1) {
-            unset($classes[$key]);
+    if (is_front_page()) {
+
+            // String 'home' for front page
+            $classes[] = 'home';
+
+        } else if (is_home()) {
+
+            // String 'blog-home' for home page
+
+            $classes[] = 'blog-home';
+
+        } else {
+            // Set not home for internal pages
+
+            $classes[] = 'not-home';
+
+            // Post name for non front pages
+
+            if (!in_array(wp_basename(get_permalink()), $classes)) {
+
+                $classes[] = wp_basename(get_permalink());
+
+            }
         }
-    } elseif (is_page()) {
-        $classes[] = sanitize_html_class($post->post_name);
-    } elseif (is_singular()) {
-        $classes[] = sanitize_html_class($post->post_name);
-    }
 
     return $classes;
 }
