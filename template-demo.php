@@ -3,7 +3,10 @@
 	<!-- section -->
 	<section role="main">
 	
-		<h1><?php the_title(); ?></h1>
+		 <?php if (is_front_page()) {
+			echo '<h1><?php the_title(); ?></h1>';
+			}
+		?>
 	
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
@@ -12,11 +15,11 @@
 		
 			<?php the_content(); ?>
 			
-			<?php comments_template( '', true ); // Remove if you don't want comments ?>
+			<? /* php comments_template( '', true ); // Remove if you don't want comments ?>
 			
 			<br class="clear">
 			
-			<?php edit_post_link(); ?>
+			<?php edit_post_link(); */?>
 			
 		</article>
 		<!-- /article -->
@@ -38,6 +41,6 @@
 	</section>
 	<!-- /section -->
 	
-<?php get_sidebar(); ?>
+<? /* php get_sidebar(); */?>
 
-<?php get_footer(); ?>
+<? /* php get_footer(); */?>

@@ -34,12 +34,68 @@ html {
 }
 body {
 	background:#e5b802;
-	box-shadow: inset 0 0 200px #583d0e;
-	-webkit-box-shadow: inset 0 0 200px #583d0e;
 	font:300 20px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:#FFF;
+	color:#333;
 	height:100%;
 	width:100%;
+}
+body.home {
+	box-shadow: inset 0 0 200px #583d0e;
+	-webkit-box-shadow: inset 0 0 200px #583d0e;
+}
+/****TEMPORAL STYLES*****/
+.home-link-blog {
+	background: #e5b802;
+	padding:0 6px;
+	color:#FFF;
+	position:relative;
+	text-align:center;
+	display:inline-block;
+	z-index: 10;
+}
+.principal-link {
+	position:relative;
+	margin:0 auto;
+	text-align: center;
+	width:230px;
+}
+.principal-link:after {
+	position:relative;
+	background: #FFF;
+	content:"";
+	display:block;
+	height:1px;
+	bottom:13px;
+	z-index: 1;
+}
+.blog section, .single section {
+	background: #f3d356;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	margin:0 auto;
+	width:980px;
+}
+.wp-post-image{
+	/*border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;*/
+}
+.blog article, .single article {
+	border-bottom: 25px solid #e5b802;
+}
+.blog article .content-article, .single article .content-article{
+	padding:20px;
+}
+.blog h2, .single h2 {
+	margin:0;
+}
+.blog h2 a, .single h2 a {
+	color: #583d0e;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	background: #4594d7;
+	border: 0;
+	padding: 5px 9px;
+	color: #FFF;
 }
 /* clear */
 .clear:before,
@@ -93,12 +149,12 @@ input:focus {
 	
 }
 /* logo */
-.blog .logo {
-	margin:20px auto;;
+.logo {
+	margin:20px auto ;
 	width:230px;
 }
 .home .logo {
-	margin:100px auto;;
+	margin:250px auto 0;
 	width:230px;
 }
 .logo-img {
